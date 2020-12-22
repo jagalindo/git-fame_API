@@ -1,0 +1,3 @@
+git-fame==1.14.0
+GitPython==3.1.11
+hug==2.6.1
