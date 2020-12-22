@@ -1,21 +1,10 @@
+<!DOCTYPE html>
 
-<!doctype html>
-<script>
-  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-    let url = tabs[0].url;
-
-    var iframe = document.createElement('iframe');
-    iframe.style.display = "none";
-    iframe.src = "https://immense-dusk-28515.herokuapp.com/exec_fame?url="+url;
-    iframe.width="600px"
-    iframe.height="400px"
-    document.getElementById("placeholder").appendChild(iframe)
-  });
-</script>
 <html>
   <head>
   </head>
   <body>
-    <div id=placeholder></div>
+    <div id=placeholder style="width:650px; height:450px">LOADING ...</div>
+  <script type="text/javascript" src="popup.js"></script>
   </body>
 </html>

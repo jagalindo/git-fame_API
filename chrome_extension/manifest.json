@@ -12,6 +12,7 @@
     },
     "permissions": [
         "activeTab",
-        "tabs"
+        "tabs",
+        "https://immense-dusk-28515.herokuapp.com/*"
      ]
 }
