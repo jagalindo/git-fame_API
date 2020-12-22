@@ -1,9 +1,21 @@
 
 <!doctype html>
+<script>
+  chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    let url = tabs[0].url;
+
+    var iframe = document.createElement('iframe');
+    iframe.style.display = "none";
+    iframe.src = "https://immense-dusk-28515.herokuapp.com/exec_fame?url="+url;
+    iframe.width="600px"
+    iframe.height="400px"
+    document.getElementById("placeholder").appendChild(iframe)
+  });
+</script>
 <html>
   <head>
   </head>
   <body>
-    <iframe src="http://ffbe642eea41.ngrok.io/exec_fame?url=https://github.com/diverso-lab/core.git" title="GitFame HUG iframe" width="600px" height="200px"></iframe>
+    <div id=placeholder></div>
   </body>
 </html>
