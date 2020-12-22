@@ -19,16 +19,16 @@ def exec_fame(url: hug.types.text):
     else:
         if not url.endswith(".git"):
             url=url+".git"
-            _id=id_generator()
-            Repo.clone_from(url, "./"+_id) 
-            old_stdout = sys.stdout
-            sys.stdout = mystdout = StringIO()
+        _id=id_generator()
+        Repo.clone_from(url, "./"+_id) 
+        old_stdout = sys.stdout
+        sys.stdout = mystdout = StringIO()
 
-            res=gitfame.main(['--sort=commits', '-wt', './'+_id])
+        gitfame.main(['--sort=commits', '-wt', './'+_id])
             
-            sys.stdout = old_stdout
-            try:
-                shutil.rmtree("./"+_id)
-            except OSError as e:
-                print("Error: %s : %s" % ("./"+_id, e.strerror))
-            return mystdout.getvalue().replace("\n","<br>")
+        sys.stdout = old_stdout
+        try:
+            shutil.rmtree("./"+_id)
+        except OSError as e:
+            print("Error: %s : %s" % ("./"+_id, e.strerror))
+        return mystdout.getvalue().replace("\n","<br>")
